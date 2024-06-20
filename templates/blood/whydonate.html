@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <style>
+    footer{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+footer h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+footer p{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+footer ul li{
+    margin-bottom: 10px;
+}
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+  </style>  
+    
+    
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+ 
+<br>
+<style>
+
+  .container{
+    padding:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    
+</style>
+
+<div class="container" >
+  <div>
+      <img src="{% static 'blood3.jpg' %}" alt="" style= "height:500px; width:600px; padding-left: 25px;">
+  </div>
+  <div>
+  <h3 style="padding-top: 30px; padding-left:  100px;">Why Donate Blood</h3>
+   <pre  style="padding-left: 100px; font-size: 15px; font-style: italic; font-family: cursive;">Blood is the most precious gift that anyone can give to another person - the gift of Life.
+A decision to donate our blood save a life, or even several if our blood is separated into the 
+components- red cells, platelets ans plasma - which can be used individually for patients with 
+specific conditions. 
+
+Safe blood saves life and improve health.
+
+1.Blood transfusion is needed for Women with complications of pregnancy, such as ectopic 
+pregnancies and haemorrhage before, during or after childbirth.
+2.Children with severe anaemia often resulting from malaria or malnutrition.
+3.People with severe trauma folowing man-made and natural disasters.
+4.Many complex medical and surgical procedure and cancer patients.
+
+It is also needed for regular transfusions for people with condition such as thalassaemia and 
+sickle cell diseases and is used to make product such as clotting factors for people with 
+haemophilia.
+
+There is a constant need for regular blood supply because blood can be stored for only a limited 
+time before use. Regular blood donations by asufficient number of healthy people are needed to
+ensure that safe blood will be available whenever and wherever it is needed.
+   </pre>
+</div>
+
+</div>
+{% include "blood/footer.html" %}
+</body>
+
+</html>
+
+

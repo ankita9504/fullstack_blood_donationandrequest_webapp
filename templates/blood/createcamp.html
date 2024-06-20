@@ -1,0 +1,121 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{% load static %}
+<style>
+    form .detail{
+        display: flex;
+        margin: 0.4em;
+    }
+    .form-row{
+        display:flex;
+        margin: 0.5em;
+    }
+    .btn{
+        background-color: rgb(244, 166, 166);
+        color:#fff
+    }
+    .btn:hover{
+        background-color: rgb(207, 114, 114)!important;
+    }
+    
+</style>
+<br><br>
+<div class="container">
+    <div class="row justify-content-center align-items-center h-100">
+    <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+        <div class="card-body p-4 p-md-5">
+            <h2 class= "pb-2 pb-md-0 mb-md-5" style="text-decoration: underline;text-align: center;">Start Donation Camp</h2>
+            
+            <!--form starts here ..................-->
+            <form method="post">
+            
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="camp_name">Camp Name</label>
+                            <input type="text" name="camp_name" id="camp_name" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="camp_venue">Venue</label>
+                            <input type="text" name="camp_venue" id="camp_venue" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="form-outline form-group w-100">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" name="address" class="form-control form-control-lg" id="address" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="pincode">Pincode</label>
+                            <input type="text" name="pincode" id="pincode" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-6 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="organizer">Organizer/Coordinator</label>
+                            <input type="text" name="organizer" id="organizer" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="contact_number">Contact number</label>
+                            <input type="text" name="contact_number" id="contact_number" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="date">Date</label>
+                            <input type="text" name="date" id="date" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="starttime">Starting time</label>
+                            <input type="text" name="starttime" id="starttime" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <div class="form-outline form-group">
+                            <label class="form-label" for="endtime">Ending time</label>
+                            <input type="text" name="endtime" id="endtime" class="form-control form-control-lg" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 pt-2">
+                    <input class="btn btn-lg w-100" type="submit" value="Create" />
+                </div>
+
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock content %}

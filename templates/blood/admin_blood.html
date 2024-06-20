@@ -1,0 +1,178 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+<style>
+            .xyz{
+      
+      display: table;
+      margin-right: auto;
+      margin-left: auto;
+            }
+
+            .col-sm-3{
+        border-radius: 1.5em;
+    }
+    .col-sm-3 a{
+        text-decoration: none;
+    }
+    .col-sm-3 > *{
+        border-radius: inherit;
+        border: none;
+    }
+    .card-body{
+        border: 1px solid #ebebebad;
+        box-shadow: 4px 4px 10px rgb(225, 225, 225);
+        border-radius: inherit;
+    }
+    h2{
+        color: #757575;
+        font-size: 1.8em;
+    }
+    .amount{
+        font-size: 1.4em;
+        color: rgb(0, 91, 0);
+    }
+    i{
+        font-size: 0.8em;
+    }
+</style>
+<br><br>
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>A+ </h2>
+                </div><br><br>
+                <div class="amount">
+                    {{A1.unit}} <i>ml</i>
+                </div>                            
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>B+ </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{B1.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>O+ </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{O1.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>AB+ </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{AB1.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>A- </h2>
+                </div><br><br>
+                <div class="amount">
+                {{A2.unit}} <i>ml</i>
+                </div>                            
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>B- </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{B2.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>O- </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{O2.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>AB- </h2>
+                </div><br><br>
+                <div class="amount">
+                  {{AB2.unit}} <i>ml</i>
+                </div>                            
+            </div>
+          </div>
+      </div>
+  </div>
+<hr>
+
+
+<br>
+<h3 class="text-center">Update Blood Unit</h3><br>
+<div class="xyz">
+
+    <form class="form-inline" method="POST">
+        {% csrf_token %}
+        <div class="form-group mx-sm-3 mb-6">
+
+            <select name="bloodgroup" class="form-control">
+                <option disabled="disabled" selected="selected">Choose Blood Group</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+            </select>
+          </div>
+        <div class="form-group mx-sm-3 mb-6">
+
+          <input type="number" class="form-control" name="unit" placeholder="Unit">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Update</button>
+      </form>
+</div>
+
+
+</div>
+
+
+{% endblock content %}

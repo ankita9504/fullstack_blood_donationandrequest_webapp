@@ -1,0 +1,128 @@
+{% extends 'donor/donorbase.html' %}
+{% block content %}
+<style>
+  .col-sm-3{
+    border-radius: 1.5em;
+  }
+  .col-sm-3 > *{
+    border-radius: inherit;
+  }
+  .card-body{
+      border: 1px solid #ebebebad;
+      box-shadow: 4px 4px 10px rgb(225, 225, 225);
+      border-radius: inherit;
+  }
+  .card-body .values{
+    font-size: 1.3em;
+    color: #333333dd;
+  }
+  .xyz{
+    color: rgb(123, 181, 118);
+  }
+  
+</style>
+<br><br>
+<div class="container">
+
+
+    <div class="row">
+
+      <div class="col-sm-3">
+        <div class="card bg-light">
+          <div class="card-body">
+              <div class="blood">
+                <i class="fas fa-sync-alt xyz"></i>
+              </div><br>
+              <div class="values">
+                Requests Made <br>
+                  {{details.requestmade}}
+              </div>                            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="blood">
+                  <i class="fas fa-sync xyz"></i>
+                </div><br>
+                <div class="values">
+                    Pending Request <br>
+                    {{details.requestpending}}
+                </div>                            
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="card bg-light">
+              <div class="card-body">
+                  <div class="blood" style="color:rgb(84, 180, 90);">
+                    <i class="fas fa-check-circle xyz"></i>
+                  </div><br>
+                  <div class="values">
+                       Approved Request<br>
+                      {{details.requestapproved}}
+                  </div>                            
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card bg-light">
+              <div class="card-body">
+                  <div class="blood">
+                    <i class="fas fa-times-circle xyz" ></i>
+                  </div><br>
+                  <div class="values">
+                       Rejected Request <br>
+                      {{details.requestrejected}}
+                  </div>                            
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tablecontainer mt-5 mb-0">
+      <H4 class="text-center">Blood Donation Camps</H4><br>
+      <table class="table table-light table-hover table-bordered table-striped">
+          <thead class="" style="background-color: #ffdcd8;">
+              <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Camp Name</th>
+                  <th scope="col">Venue</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Pincode</th>
+                  <th scope="col">Conducted By</th>
+                  <th scope="col">Contact No.</th>
+                  <th scope="col">Time</th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+              {% for camp in camps %}
+              <tr>
+                  
+                  
+                  <td>{{camp.date}}</td>
+                  <td> {{camp.camp_name}}</td>
+                  
+                  <td>{{camp.camp_venue}}</td>
+                  <td>{{camp.address}}</td>
+                  <td>{{camp.pincode}}</td>
+                  <td>{{camp.organizer}}</td>
+                  <td>{{camp.contact_number}}</td>
+                  <td>{{camp.starttime}}-{{camp.endtime}}</td>
+
+              </tr>
+              {% endfor %}
+
+          </tbody>
+      
+      </table>
+    </div>
+
+
+</div>
+{% endblock content %}

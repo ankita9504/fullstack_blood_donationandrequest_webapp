@@ -1,0 +1,252 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+
+<style>
+    .col-sm-3{
+        border-radius: 1.5em;
+    }
+    .col-sm-3 a{
+        text-decoration: none;
+    }
+    .col-sm-3 > *{
+        border-radius: inherit;
+        border: none;
+    }
+    .card-body{
+        border: 1px solid #ebebebad;
+        box-shadow: 4px 4px 10px rgb(225, 225, 225);
+        border-radius: inherit;
+    }
+    .otherdetails{
+        background-color: rgb(226, 226, 255);
+        box-shadow: 3px 3px 5px rgb(211, 211, 255);
+    }
+    h2{
+        color: #757575;
+        font-size: 1.8em;
+    }
+    .amount{
+        font-size: 1.4em;
+        color: rgb(0, 91, 0);
+    }
+    i{
+        font-size: 0.8em;
+    }
+</style>
+<br><br>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>A+ </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.A1.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>B+ </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.B1.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>O+ </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.O1.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>AB+ </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.AB1.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>A- </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.A2.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>B- </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.B2.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>O- </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.O2.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>AB- </h2>
+                    </div><br><br>
+                    <div class="amount">
+                        {{details.AB2.unit}} <i>ml</i>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+<hr>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/admin-donor">
+                <div class="card bg-light">
+                    <div class="card-body otherdetails">
+                        <div class="blood">
+                            <i class="fas fa-users"></i>
+                        </div><br>
+                        <div>
+                            Total Donors <br>
+                            {{details.totaldonors}}
+                        </div>                            
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/admin-request-history">
+                <div class="card bg-light">
+                    <div class="card-body otherdetails">
+                        <div class="blood">
+                            <i class="fas fa-spinner"  style="color: rgb(255, 151, 39);"></i>
+                        </div><br>
+                        <div>
+                            Total Requests <br>
+                           {{details.totalrequest}}
+                        </div>                            
+                    </div>
+                </div>
+            </a>
+      </div>
+      <div class="col-sm-3">
+        <a href="/admin-request-history">
+            <div class="card bg-light">
+                <div class="card-body otherdetails">
+                    <div class="blood">
+                        <i class="far fa-check-circle" style="color: rgb(0, 155, 0);"></i>
+                    </div><br>
+                    <div>
+                        Approved Requests <br>
+                        {{details.totalapprovedrequest}}
+                    </div>                            
+                </div>
+            </div>
+        </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#">
+                <div class="card bg-light">
+                    <div class="card-body otherdetails">
+                        <div class="blood">
+                            <i class="fas fa-tint xyz" style="color: rgb(255, 39, 39);"></i>
+                        </div><br>
+                        <div>
+                            Total Blood Unit (in ml) <br>
+                            {{details.totalbloodunit}} <i>ml</i>
+                        </div>                            
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+<hr>
+<div class="tablecontainer mt-5 mb-0">
+    <H4 class="text-center">CREATED CAMPS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="" style="background-color: #ffdcd8;">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Camp Name</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Address</th>
+                <th scope="col">Pincode</th>
+                <th scope="col">Conducted By</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Time</th>
+                <th scope="col">Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for camp in camps %}
+            <tr>
+                
+                
+                <td>{{camp.date}}</td>
+                <td> {{camp.camp_name}}</td>
+                
+                <td>{{camp.camp_venue}}</td>
+                <td>{{camp.address}}</td>
+                <td>{{camp.pincode}}</td>
+                <td>{{camp.organizer}}</td>
+                <td>{{camp.contact_number}}</td>
+                <td>{{camp.starttime}}-{{camp.endtime}}</td>
+                <td class="text-right">
+                    <button class="btn badge-pill" style="width: 80px;background-color: rgb(234, 179, 179);"><a  style="text-decoration: none;color: white;" href="{% url 'edit-camp-details' camp.id %}">Edit</a> </button>
+                    <button class="btn badge-pill" style="width: 80px;background-color: rgb(204, 126, 126);"><a  style="text-decoration: none;color: white;" href="{% url 'delete-camp' camp.id  %}">Delete</a> </button>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table>
+  </div>
+
+</div>
+
+
+{% endblock content %}

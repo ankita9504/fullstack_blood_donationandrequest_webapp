@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+  <style> 
+  </style>       
+</head>
+<body>
+  {% include "blood/navbar.html" %}
+<br>
+<style>
+   
+</style>
+<br><br>
+<div class="container">
+    {% if donors %}
+    <H4 class="text-center">DONOR DETAILS</H4><br>
+     {% comment %} <ul>
+        {%for donor in donors %}
+        <li>First Name: {{donor.user}}, Blood Group:{{donor.bloodgroup}}, Address:{{donor.address}}</li>
+        {% endfor %}
+     </ul> {% endcomment %}
+     <table class="table table-light table-hover table-bordered table-striped" border="1">
+      <thead class="headings" border="1" >
+          <tr>
+        
+              <th scope="col">Name</th>
+              <th scope="col">Blood Group</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Address</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for donor in donors %}
+          <tr>
+              <td>{{donor.get_name}}</td>
+              <td>{{donor.bloodgroup}}</td>
+              <td>{{donor.mobile}}</td>
+              <td>{{donor.address}}</td>
+    
+          </tr>
+          {% endfor %}
+  </table>
+     {%else %}
+     <p>No Donors found.</p>
+     {%endif%}
+</div>
+
+
+
+</body>
+
+</html>
+
+
+
+
+

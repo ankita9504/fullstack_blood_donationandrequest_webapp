@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <style>
+    footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+footer h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+footer p{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+footer ul li{
+    margin-bottom: 10px;
+}
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+  </style>  
+    
+    
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+ 
+<br>
+<style>
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    
+</style>
+<br><br>
+<div class="container" >
+  <div>
+      <img src="{% static 'blood3.jpg' %}" alt="" style= "height:500px; width:600px; padding-left: 25px;">
+  </div>
+  <div>
+  <h3 style="padding-top: 50px; padding-left:  100px;">About Us</h3>
+   <pre  style="padding-left: 100px; font-size: 15px; font-style: italic; font-family: cursive;">Blood bank is a place where blood bag that is collected from blood donation event is stored.
+The word "Blood Bank" refers to a division of a hospital laboratary where the storage of
+blood product occurs and where proper testing is performed to reduce the risk of tranfusion 
+related events.
+The process of managing the blood bag that is received from blood donation events need a 
+proper and systematic management. 
+Blood Bank donation system can collect blood from many donators in short from various sources 
+and distribute the blood to needy people who require blood. Even though the technology has
+advanced much already ,still today's system in blood bank are usually manual system. Usually 
+when a person required a particular type of blood and the type is not available inthe hospital,
+the person send ,messages to family,relatives and friends if they can donate. As such, it is 
+time consuming and laborious and may risk the life of the person who really ned blood urgently.
+
+The project's aim is to develop an application system to minimize the manual work for Blood 
+Bank,Donors, Blood Group management.It monitors all of the Blood Group information,Blood cells,
+Blood supply and Donor list.The development of Blood Bank and Donation Management System is 
+proposed to provide a management functional to the blood bank in order to handle the blood
+bag and to make entriesof the individuals who want to donate blood and who are in need.
+
+<h5>Advantages:</h5> 
+1.Helps Blood Banks to automate blood doner and depository online.
+2.Encourages blood donors to donate.
+3.Helps people find blood donors in times of need.
+   </pre>
+</div>
+
+</div>
+
+
+{% include "blood/footer.html" %}
+</body>
+
+</html>
+

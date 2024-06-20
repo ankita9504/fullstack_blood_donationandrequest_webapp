@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <style>
+   
+  </style>  
+    
+    
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+ 
+<br>
+<style>
+
+
+
+    
+</style>
+
+
+<br><br>
+<div class="container">
+    <H4 class="text-center">CAMP DETAILS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped" border="1">
+        <thead class="headings" border="1" >
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Camp Name</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Address</th>
+                <th scope="col">Pincode</th>
+                <th scope="col">Conducted By</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in camps %}
+            <tr>
+                <td>{{c.date}}</td>
+                <td>{{c.camp_name}}</td>
+                <td>{{c.camp_venue}}</td>
+                <td>{{c.address}}</td>
+                <td>{{c.pincode}}</td>
+                <td>{{c.organizer}}</td>
+                <td>{{c.contact_number}}</td>
+                <td>{{c.starttime}}</td>
+                <td>{{c.endtime}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,38 @@
+{% extends 'patient/patientbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+<head>
+        <!-- Font special for pages-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+        <!-- Main CSS-->
+    
+        <link href="{% static "css/main.css" %}"rel="stylesheet" media="all">
+</head>
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+      
+        <div style="margin-left: 40px;width: 60em;" class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Search Donors</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{% url 'search_blood' %}">
+                    {% csrf_token %}
+                    <label for="bloodgroup" > Blood Group:</label>
+                    <input type="text" id="bloodgroup" name="bloodgroup" placeholder="Enter Blood group" required><br><br>
+                    <label for="address"> Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter Address" required><br><br>               
+                    <button type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
